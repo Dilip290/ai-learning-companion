@@ -1,1 +1,11 @@
-// tailwind.config.js - placeholder content created at 2025-04-23 16:37:57.526069
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
