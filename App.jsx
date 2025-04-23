@@ -1,7 +1,3 @@
-import os
-
-# Re-define and re-save the updated React App.jsx code after kernel reset
-frontend_code = """
 import { useState } from "react";
 
 function App() {
@@ -14,7 +10,6 @@ function App() {
     e.preventDefault();
     setResult(null);
 
-    // Submit interaction
     const formData = new URLSearchParams();
     formData.append("name", name);
     formData.append("subject", subject);
@@ -26,7 +21,6 @@ function App() {
       body: formData,
     });
 
-    // Fetch recommendation
     const res = await fetch(`https://ai-learning-companion-2.onrender.com/get-recommendation?name=${name}`);
     const data = await res.json();
     setResult(data);
@@ -63,12 +57,3 @@ function App() {
 }
 
 export default App;
-"""
-
-# Save it
-app_path = "/mnt/data/ai-learning-companion/frontend/src/App.jsx"
-os.makedirs(os.path.dirname(app_path), exist_ok=True)
-with open(app_path, "w") as f:
-    f.write(frontend_code)
-
-app_path
